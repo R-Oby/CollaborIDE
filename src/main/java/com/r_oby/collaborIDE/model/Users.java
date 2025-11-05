@@ -1,14 +1,10 @@
 package com.r_oby.collaborIDE.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 @Entity
+@Table(name = "users")
 @Data
 public class Users {
     @Id
@@ -16,9 +12,4 @@ public class Users {
     private Long id;
     private String username;
     private String password;
-}
-
-@Repository
-public interface UsersRepository extends JpaRepository<Users, Long> {
-    Users findByUsername(String username);
 }
